@@ -292,6 +292,13 @@
                 lastEntered = null;
             }
         };
+
+        var addStep = function( el, idx ){
+            steps.push( el );
+            canvas.appendChild( el )
+            initStep( el ); 
+            goto( el );
+        };
         
         // `initStep` initializes given step element by reading data from its
         // data attributes and setting correct styles.
@@ -635,7 +642,10 @@
             init: init,
             goto: goto,
             next: next,
-            prev: prev
+            prev: prev,
+            initStep: initStep,
+            addStep: addStep,
+            getStep: getStep
         });
 
     };
