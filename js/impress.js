@@ -168,8 +168,8 @@
     var body = document.body;
     
     var ua = navigator.userAgent.toLowerCase();
-    var impressSupported = 
-                          // browser should support CSS 3D transtorms 
+    var impressSupported = true;
+/*                          // browser should support CSS 3D transtorms 
                            ( pfx("perspective") !== null ) &&
                            
                           // and `classList` and `dataset` APIs
@@ -184,10 +184,11 @@
     if (!impressSupported) {
         // we can't be sure that `classList` is supported
         body.className += " impress-not-supported ";
-    } else {
-        body.classList.remove("impress-not-supported");
+    } else {*/
+        /*body.classList.remove("impress-not-supported");
         body.classList.add("impress-supported");
-    }
+        */
+    //}
     
     // GLOBALS AND DEFAULTS
     
@@ -634,7 +635,7 @@
             // by selecting step defined in url or first step of the presentation
             goto(getElementFromHash() || steps[0], 0);
         }, false);
-        
+        body = document.body;
         body.classList.add("impress-disabled");
         
         // store and return API for given impress.js root element
